@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const secretNumber = Math.floor(Math.random() * 10) + 1; // nahodne cislo od 1 do 10
+
+        let attempts = 3; // tip pouzivatela
+        let guess = 0; //pocet pokusov
+
+        for (let i = 0; i < attempts; i++) {
+            const input = prompt("Hádaj číslo od 1 do 10");
+            guess = Number(input);
+
+            if (i === attempts - 1 && secretNumber !== guess) {
+                alert("Bohužiaľ si vyčerpal všetky pokusy. Moje číslo bolo " + secretNumber);
+                break;
+            }
+
+            if (secretNumber === guess) {
+                alert("Gratulujem! Uhadol si");
+
+            }
+
+            alert(
+                "Secret je vacsie ako tvoj tip. " +
+                (secretNumber <= 5
+                    ? " hint: tajné číslo je menšie alebo rovné 5"
+                    : " hint: tajné číslo je väčšie ako 5")
+            );
+        }
+
+        alert(
+            "Secret je mensie ako tvoj tip. " +
+            (secretNumber <= 5
+                ? " hint: tajné číslo je menšie alebo rovné 5"
+                : " hint: tajné číslo je väčšie ako 5")
+        );
+
+
+
+        if (secretNumber === guess) {
+            alert("Secret number = " + secretNumber);
+        }
+
+        alert("Bohužiaľ si vyčerpal všetky pokusy. Moje číslo bolo " + secretNumber + ".");
+    </script>
+</body>
+
+</html>
